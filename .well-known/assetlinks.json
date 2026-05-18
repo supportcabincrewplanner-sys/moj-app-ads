@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.pilotjancek.cabincrewplanner",
+    "sha256_cert_fingerprints": ["B2:AB:25:55:7D:35:57:DD:93:39:D8:92:05:0F:74:D2:91:1F:90:0D:86:62:A4:CC:83:BF:FB:C2:63:7B:DC:C0"]
+  }
+}]
