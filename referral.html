@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cabin Crew Planner Referral</title>
+    <script>
+        window.onload = function() {
+            // Get the URL parameters
+            var urlParams = new URLSearchParams(window.location.search);
+            var referrerId = urlParams.get('referrerId');
+            
+            // Build the Play Store URL
+            var playStoreUrl = "https://play.google.com/store/apps/details?id=com.pilotjancek.cabincrewplanner";
+            if (referrerId) {
+                playStoreUrl += "&referrer=" + encodeURIComponent(referrerId);
+            }
+            
+            // Redirect the user
+            window.location.replace(playStoreUrl);
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting to the Google Play Store...</p>
+</body>
+</html>
