@@ -5,22 +5,28 @@
     <title>Cabin Crew Planner Referral</title>
     <script>
         window.onload = function() {
-            // Get the URL parameters
+            // Preberemo ID iz URL-ja
             var urlParams = new URLSearchParams(window.location.search);
             var referrerId = urlParams.get('referrerId');
             
-            // Build the Play Store URL
+            // 1. Pripravimo Play Store URL za primer, če aplikacija NI naložena (Fallback)
             var playStoreUrl = "https://play.google.com/store/apps/details?id=com.pilotjancek.cabincrewplanner";
             if (referrerId) {
                 playStoreUrl += "&referrer=" + encodeURIComponent(referrerId);
             }
             
-            // Redirect the user
-            window.location.replace(playStoreUrl);
+            // 2. Pripravimo pametni Android Intent
+            // Če je aplikacija naložena, jo bo tole odprlo direktno in ji predalo referrerId.
+            // Če je ni, bo uporabilo playStoreUrl.
+            var intentUrl = "intent://supportcabincrewplanner-sys.github.io/moj-app-ads/referral.html?referrerId=" + encodeURIComponent(referrerId) + 
+                            "#Intent;scheme=https;package=com.pilotjancek.cabincrewplanner;S.browser_fallback_url=" + encodeURIComponent(playStoreUrl) + ";end";
+            
+            // Preusmerimo uporabnika z Intentom
+            window.location.replace(intentUrl);
         };
     </script>
 </head>
 <body>
-    <p>Redirecting to the Google Play Store...</p>
+    <p>Odpiram Cabin Crew Planner...</p>
 </body>
 </html>
