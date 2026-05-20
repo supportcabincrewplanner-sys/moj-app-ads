@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
         .container {
             max-width: 400px;
             margin: 0 auto;
-            background: #0A2540; /* Prestižna temno modra podlaga */
+            background: #0A2540;
             padding: 40px 30px;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -34,8 +34,8 @@
         }
         .btn {
             display: inline-block;
-            background-color: #D4AF37; /* Zlati poudarek za gumb */
-            color: #0A2540; /* Temno modro besedilo za kontrast */
+            background-color: #D4AF37;
+            color: #0A2540;
             text-decoration: none;
             padding: 16px 24px;
             font-size: 18px;
@@ -60,31 +60,25 @@
 <body>
     <div class="container">
         <h1>Cabin Crew Planner Pro</h1>
-        <p>Prijatelj ti pošilja 14-dnevni brezplačni dostop do Premium funkcij!</p>
+        <p>A colleague invited you to try Premium! Claim your exclusive 14-day free trial.</p>
         
-        <a id="downloadBtn" href="#" class="btn">Prevzemi nagrado v aplikaciji</a>
+        <a id="downloadBtn" href="#" class="btn">Claim Reward in App</a>
     </div>
     
-    <p class="loading-text">Če se aplikacija ne odpre samodejno, klikni zgornji gumb.</p>
+    <p class="loading-text">If the app doesn't open automatically, click the button above.</p>
 
     <script>
-        // 1. Preberemo ID prijatelja iz URL-ja (npr. ?referrerId=123)
         const urlParams = new URLSearchParams(window.location.search);
         const referrerId = urlParams.get('referrerId');
 
-        // 2. Sestavimo ultimativni Play Store URL
         let playStoreUrl = "https://play.google.com/store/apps/details?id=com.pilotjancek.cabincrewplanner";
         if (referrerId) {
-            // Tukaj Google Play trgovini povemo, cigav je link!
             playStoreUrl += "&referrer=" + encodeURIComponent(referrerId);
         }
 
-        // 3. Fizičnemu gumbu dodelimo ta URL (reši problem Messengerja)
         document.getElementById("downloadBtn").href = playStoreUrl;
 
-        // 4. Avtomatski poskus odpiranja (za tiste zunaj Messengerja)
         window.onload = function() {
-            // Dodamo rahel zamik, da se grafika naloži, preden brskalnik morda blokira skripto
             setTimeout(function() {
                 const intentUrl = "intent://supportcabincrewplanner-sys.github.io/moj-app-ads/referral.html?referrerId=" 
                     + encodeURIComponent(referrerId || "") 
