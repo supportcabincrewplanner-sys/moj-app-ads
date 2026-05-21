@@ -15,7 +15,7 @@
         .container {
             max-width: 400px;
             margin: 0 auto;
-            background: #0A2540;
+            background: #0A2540; /* Prestižna temno modra podlaga */
             padding: 40px 30px;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -32,10 +32,14 @@
             margin-bottom: 30px;
             line-height: 1.5;
         }
+        .highlight {
+            color: #D4AF37; /* Gold accent for the discount */
+            font-weight: bold;
+        }
         .btn {
             display: inline-block;
-            background-color: #D4AF37;
-            color: #0A2540;
+            background-color: #D4AF37; 
+            color: #0A2540; 
             text-decoration: none;
             padding: 16px 24px;
             font-size: 18px;
@@ -60,9 +64,9 @@
 <body>
     <div class="container">
         <h1>Cabin Crew Planner Pro</h1>
-        <p>A colleague invited you to try Premium! Claim your exclusive 14-day free trial.</p>
+        <p>A colleague invited you to try Premium! Claim your exclusive <span class="highlight">14-day free trial</span> and a <span class="highlight">10% discount</span> on your subscription.</p>
         
-        <a id="downloadBtn" href="#" class="btn">Claim Reward in App</a>
+        <a id="downloadBtn" href="#" class="btn">Claim VIP Offer in App</a>
     </div>
     
     <p class="loading-text">If the app doesn't open automatically, click the button above.</p>
